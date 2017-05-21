@@ -19,7 +19,7 @@ notes:
     for grouping, stable sort is generally desirable,
     whereas for set operations, we are better off using the fastest sort
 """
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 from builtins import *
 from functools import reduce
 

@@ -3,7 +3,7 @@
 the main purpose is to expand functionality to multidimensional arrays,
 but it also is much more readable and DRY than numpy.arraysetops
 """
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 from builtins import *
 
 from numpy_indexed.funcs import *

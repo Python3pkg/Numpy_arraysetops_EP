@@ -14,14 +14,14 @@ def test_group_by():
     print('two methods of splitting by group')
     print('as list')
     for k,v in zip(*group_by(keys)(values)):
-        print(k, v)
+        print((k, v))
     print('as iterable')
     g = group_by(keys)
     for k,v in zip(g.unique, g.split_sequence_as_iterable(values)):
-        print(k, list(v))
+        print((k, list(v)))
     print('iterable as iterable')
     for k, v in zip(g.unique, g.split_iterable_as_iterable(values)):
-        print(k, list(v))
+        print((k, list(v)))
 
     print('some reducing group operations')
     g = group_by(keys)
@@ -42,7 +42,7 @@ def test_group_by():
     print(reduced_values)
 
     print('per group sum using custom reduction')
-    print(group_by(keys, values, lambda x:x.sum()))
+    print((group_by(keys, values, lambda x:x.sum())))
 
 
 def test_lex_median():
@@ -52,7 +52,7 @@ def test_lex_median():
     values = [1.2, 4.5, 4.3, 2.0, 5.6, 8.8, 9.1, 1]
 
     unique, median = group_by((keys1, keys2)).median(values)
-    for i in zip(zip(*unique), median):
+    for i in zip(list(zip(*unique)), median):
         print(i)
 
 
@@ -67,8 +67,8 @@ def test_dict():
     {'dept': '003', 'sku': 'foo', 'transId': 'uniqueId7', 'qty': 700}
     ]
 
-    inputs = dict((k, [i[k] for i in input ]) for k in input[0].keys())
-    print(group_by((inputs['dept'], inputs['sku'])).mean(inputs['qty']))
+    inputs = dict((k, [i[k] for i in input ]) for k in list(input[0].keys()))
+    print((group_by((inputs['dept'], inputs['sku'])).mean(inputs['qty'])))
 
 
 def test_argmin():
@@ -127,14 +127,14 @@ def test_prod():
     keys   = ["e", "b", "b", "c", "d", "e", "e", 'a']
     values = [1.2, 4.5, 4.3, 2.0, 5.67, 8.08, 0, 1]
     g, p = group_by(keys).prod(values)
-    print(g, p)
+    print((g, p))
 
 
 def test_all():
     keys   = ["e", "b", "b", "c", "d", "e", "e", 'a']
     values = [1.2, 4.5, 4.3, 0,   5.67, 8.08, 0, 1]
     g, p = group_by(keys).all(values)
-    print(g, p)
+    print((g, p))
 
 
 def test_mean_axis():

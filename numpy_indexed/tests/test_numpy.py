@@ -1,7 +1,7 @@
 """monkey-patch the numpy tests, and see if they still run with their native function replaced
 with their equivalents from this package"""
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 from builtins import *
 
 import os

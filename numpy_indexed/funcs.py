@@ -1,7 +1,7 @@
 """This module implements useful functionality on top of the Index class,
 which is not currently present in numpy"""
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 from builtins import *
 
 import numpy as np

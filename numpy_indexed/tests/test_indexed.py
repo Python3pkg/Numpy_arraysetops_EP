@@ -2,7 +2,7 @@
 many functions could still do with better test coverage!
 """
 
-from __future__ import absolute_import, division, print_function, unicode_literals
+
 
 import numpy.testing as npt
 import pytest
@@ -47,11 +47,11 @@ def test_fancy_keys():
         print(e)
     print('sum per group of identical rows using lex of nd-key')
     g = group_by(( keys, floatkeys))
-    for e in zip(zip(*g.unique), g.sum(values)[1]):
+    for e in zip(list(zip(*g.unique)), g.sum(values)[1]):
         print(e)
     print('sum per group of identical rows using lex of struct key')
     g = group_by((as_struct_array( keys), floatkeys))
-    for e in zip(zip(*g.unique), g.sum(values)[1]):
+    for e in zip(list(zip(*g.unique)), g.sum(values)[1]):
         print(e)
 
     #showcase enhanced unique functionality

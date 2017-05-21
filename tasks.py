@@ -24,7 +24,7 @@ on_osx = sys.platform.startswith("darwin")
 
 
 def _print(message):
-    print("[INVOKE] {}".format(message))
+    print(("[INVOKE] {}".format(message)))
 
 
 def _exit(message):
